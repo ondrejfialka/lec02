@@ -16,11 +16,14 @@ public class User implements Serializable {
 	private String password;
 	private boolean loggedIn;
 	private boolean registrationEnabled;
-	
-	@Inject 
+
 	private SecurityManager securityManager;
-	
-	
+
+	@Inject
+	public User ( SecurityManager securityManager) {
+		this.securityManager = securityManager;
+	}
+
 	private Conversation conversation;
 	
 	@PostConstruct
